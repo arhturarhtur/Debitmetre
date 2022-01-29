@@ -38,13 +38,17 @@ if((millis() - tempsAncien) > 1000) // Calcule le débit toutes les 1 secondes e
     // Réactive les interruptions
     interrupts();
         
-    // 1 pulse = 1L
+    // 1000 pulse = 1L
     // L/min
     debit = 60000.0 / (time - tempsAncien) * pulses / NbImpulsionsDebitmetre;
-
+    temps=time-tempsAncien;
     tempsAncien = time;
     Serial.print("débit : ");
     Serial.println(debit);
+    Serial.print("temps : ");
+    Serial.println(temps);
+    Serial.print("impulsions : ");
+    Serial.println(pulses);
     hc06.print(debit);
   }
 }
