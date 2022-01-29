@@ -6,6 +6,7 @@ volatile long nbPulse = 0;                     // compteur d'impulsions
 long NombreDimpulsions = 0;
 float debit;
 unsigned long tempsAncien = 0;
+unsigned long temps = 0;
 const int NbImpulsionsDebitmetre = 1000;
 
 void ICACHE_RAM_ATTR comptage() {
